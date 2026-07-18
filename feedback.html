@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+<body>
+    <header>
+        <h1>StudentHub</h1>
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="feedback.html" aria-current="page">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <aside>
+        <h2>Feedback Tips</h2>
+
+        <ul>
+            <li>Share your experience.</li>
+            <li>Suggest improvements.</li>
+            <li>Report any issues.</li>
+            <li>Rate our services honestly.</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+
+        <section>
+            <h2>Student Feedback Form</h2>
+
+            <p>
+                We value your feedback. Please help us improve StudentHub by
+                sharing your suggestions and experience.
+            </p>
+
+            <form action="#" method="post">
+
+                <fieldset>
+
+                    <legend>Feedback Details</legend>
+
+                    <p>
+                        <label for="name">Full Name:</label><br>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="email">Email Address:</label><br>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required>
+                    </p>
+
+                    <p>
+                        <label for="rating">Overall Rating:</label><br>
+
+                        <select id="rating" name="rating" required>
+                            <option value="">-- Select Rating --</option>
+                            <option>Excellent</option>
+                            <option>Very Good</option>
+                            <option>Good</option>
+                            <option>Average</option>
+                            <option>Poor</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="message">Your Feedback:</label><br>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            cols="40"
+                            placeholder="Write your feedback here..."
+                            required></textarea>
+                    </p>
+
+                    <p>
+                        <input
+                            type="checkbox"
+                            id="agree"
+                            name="agree"
+                            required>
+
+                        <label for="agree">
+                            I confirm that the above information is correct.
+                        </label>
+                    </p>
+
+                    <button type="submit">Submit Feedback</button>
+                    <button type="reset">Clear</button>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>

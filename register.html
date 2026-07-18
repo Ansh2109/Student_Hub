@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <header>
+        <h1>StudentHub</h1>
+
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="register.html" aria-current="page">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <h2>Registration Information</h2>
+        <ul>
+            <li>Fill in all required fields.</li>
+            <li>Use a valid email address.</li>
+            <li>Create a strong password.</li>
+        </ul>
+    </aside>
+    <main>
+        <section>
+            <h2>Student Registration</h2>
+            <form action="#">
+                <label  for="fullname" >Full name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Hansaben Bharat Parmar" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="temp@gmail.com" required><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="9876543210" required><br>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob"> <br><br>
+
+                <label for="department">Department:</label><br>
+            
+                <input type="radio" id="department" name="department">
+                <label for="aiml">AIML</label><br>
+
+                <input type="radio" id="department" name="department">
+                <label for="cse">Cse</label><br>
+
+                <input type="radio" id="ce" name="department">
+                <label for="ce">CE</label><br>
+
+                <input type="radio" id="EC" name="department">
+                <label for="ec">EC</label><br>
+
+                <input type="radio" id="it" name="department">
+                <label for="it">IT</label><br><br>
+
+                <h3>password</h3>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+                <label for="confirmPassword">Confirm Password:</label><br>
+                <input type="password" id="confirmpassword" name="confirmpassword" required>
+
+                <p>
+                    <input type="checkbox" id="terms" required>
+                     <label for="terms">I agree to the Terms and Conditions.</label>
+                </p>
+                <button type="submit">Register</button>
+                <button type="reset">Clear</button>
+
+
+                
+
+            </form>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>
