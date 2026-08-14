@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - Feedback</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>StudentHub</h1>
+
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <nav id="mainNav" aria-label="Main Navigation">
+
+                <ul>
+
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+
+                    <li>
+                        <a href="feedback.html" aria-current="page">
+                            Feedback
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <button id="themeToggle" class="theme-toggle">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <aside>
+
+        <h2>Feedback Tips</h2>
+
+        <ul>
+
+            <li>Share your experience.</li>
+            <li>Suggest improvements.</li>
+            <li>Report problems.</li>
+
+        </ul>
+
+    </aside>
+
+
+    <main>
+
+        <section>
+
+            <h2>Student Feedback</h2>
+
+            <p>
+                Tell us about your StudentHub experience.
+            </p>
+
+
+            <div
+                id="feedbackMessage"
+                class="success-message"
+                aria-live="polite">
+            </div>
+
+
+            <form id="feedbackForm">
+
+                <fieldset>
+
+                    <legend>Feedback Details</legend>
+
+
+                    <label for="feedbackName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="feedbackName"
+                        name="feedbackName"
+                        required>
+
+
+                    <label for="feedbackEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="feedbackEmail"
+                        name="feedbackEmail"
+                        required>
+
+
+                    <label for="rating">
+                        Rating
+                    </label>
+
+                    <select
+                        id="rating"
+                        name="rating"
+                        required>
+
+                        <option value="">
+                            Select Rating
+                        </option>
+
+                        <option value="excellent">
+                            Excellent
+                        </option>
+
+                        <option value="very-good">
+                            Very Good
+                        </option>
+
+                        <option value="good">
+                            Good
+                        </option>
+
+                        <option value="average">
+                            Average
+                        </option>
+
+                        <option value="poor">
+                            Poor
+                        </option>
+
+                    </select>
+
+
+                    <label for="feedbackText">
+                        Your Feedback
+                    </label>
+
+                    <textarea
+                        id="feedbackText"
+                        name="feedbackText"
+                        rows="6"
+                        placeholder="Write your feedback..."
+                        required></textarea>
+
+
+                    <div class="checkbox-group">
+
+                        <input
+                            type="checkbox"
+                            id="feedbackAgree"
+                            required>
+
+                        <label for="feedbackAgree">
+                            I confirm that the information is correct.
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit">
+                        Submit Feedback
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="secondary-button">
+                        Clear
+                    </button>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

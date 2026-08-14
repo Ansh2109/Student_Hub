@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - Events</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>StudentHub</h1>
+
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <nav id="mainNav" aria-label="Main Navigation">
+
+                <ul>
+
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+
+                    <li>
+                        <a href="events.html" aria-current="page">
+                            Events
+                        </a>
+                    </li>
+
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+
+                </ul>
+
+            </nav>
+
+            <button id="themeToggle" class="theme-toggle">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <aside>
+
+        <h2>Event Categories</h2>
+
+        <ul>
+
+            <li>Technical Events</li>
+            <li>Workshops</li>
+            <li>Hackathons</li>
+            <li>Sports</li>
+            <li>Cultural Programs</li>
+
+        </ul>
+
+    </aside>
+
+
+    <main>
+
+        <section>
+
+            <h2>Upcoming Events</h2>
+
+            <div class="events-grid">
+
+                <article class="event-card">
+
+                    <h3>AI Workshop</h3>
+
+                    <p>
+                        Learn Artificial Intelligence and Machine Learning.
+                    </p>
+
+                    <p>
+                        <strong>Date:</strong>
+
+                        <time datetime="2026-08-20">
+                            20 August 2026
+                        </time>
+                    </p>
+
+                    <p>
+                        <strong>Venue:</strong>
+                        Seminar Hall
+                    </p>
+
+                    <button
+                        class="event-details-btn"
+                        data-event="AI Workshop">
+
+                        View Details
+
+                    </button>
+
+                </article>
+
+
+                <article class="event-card">
+
+                    <h3>Annual Hackathon</h3>
+
+                    <p>
+                        Build innovative projects and compete with teams.
+                    </p>
+
+                    <p>
+                        <strong>Date:</strong>
+
+                        <time datetime="2026-08-25">
+                            25 August 2026
+                        </time>
+                    </p>
+
+                    <p>
+                        <strong>Venue:</strong>
+                        Innovation Lab
+                    </p>
+
+                    <button
+                        class="event-details-btn"
+                        data-event="Annual Hackathon">
+
+                        View Details
+
+                    </button>
+
+                </article>
+
+
+                <article class="event-card">
+
+                    <h3>Sports Meet</h3>
+
+                    <p>
+                        Participate in cricket, football,
+                        badminton and athletics.
+                    </p>
+
+                    <p>
+                        <strong>Date:</strong>
+
+                        <time datetime="2026-09-05">
+                            5 September 2026
+                        </time>
+                    </p>
+
+                    <p>
+                        <strong>Venue:</strong>
+                        College Ground
+                    </p>
+
+                    <button
+                        class="event-details-btn"
+                        data-event="Sports Meet">
+
+                        View Details
+
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <div id="eventModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="modal-close"
+                aria-label="Close modal">
+                ×
+            </button>
+
+            <h2 id="modalTitle">
+                Event Details
+            </h2>
+
+            <p id="modalText">
+                Event information will appear here.
+            </p>
+
+            <button id="modalCloseButton">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

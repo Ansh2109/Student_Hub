@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - Home</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <div class="header-content">
+
+            <h1>StudentHub</h1>
+
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <nav id="mainNav" aria-label="Main Navigation">
+
+                <ul>
+
+                    <li><a href="index.html" aria-current="page">Home</a></li>
+
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/register.html">Register</a></li>
+
+                    <li> <a href="pages/login.html">Login</a></li>
+
+                    <li><a href="pages/dashboard.html">Dashboard</a></li>
+
+                    <li><a href="pages/events.html">Events</a></li>
+
+                    <li><a href="pages/profile.html">Profile</a></li>
+
+                    <li><a href="pages/contact.html">Contact</a></li>
+
+                    <li><a href="pages/admin.html">Admin</a></li>
+
+                    <li><a href="pages/faq.html">FAQ</a></li>
+
+                    <li><a href="pages/feedback.html">Feedback</a></li>
+
+                </ul>
+
+            </nav>
+
+            <button id="themeToggle" class="theme-toggle">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- Notification Banner -->
+    <div id="notification" class="notification">
+
+        <p>
+            🔔 New AI Workshop registration is now open!
+        </p>
+
+        <button
+            id="closeNotification"
+            aria-label="Close notification">
+            ×
+        </button>
+
+    </div>
+
+
+    <!-- Sidebar -->
+    <aside>
+
+        <h2>Quick Links</h2>
+
+        <ul>
+
+            <li>
+                <a href="pages/events.html">Upcoming Events</a>
+            </li>
+
+            <li>
+                <a href="pages/register.html">Student Registration</a>
+            </li>
+
+            <li>
+                <a href="pages/contact.html">Contact Support</a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- Main -->
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <h2>Welcome to StudentHub</h2>
+
+            <p>
+                Your centralized platform for academic activities,
+                events, student profiles and campus information.
+            </p>
+
+            <div class="button-group">
+
+                <a href="pages/register.html"class="btn">Register Now</a>
+                <a href="pages/login.html"class="btn secondary-btn">Login</a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Content Slider -->
+        <section>
+
+            <h2>Featured Events</h2>
+
+            <div class="slider">
+
+                <article class="slide active">
+
+                    <h3>AI & Machine Learning Workshop</h3>
+
+                    <p>
+                        Learn the fundamentals of Artificial Intelligence
+                        and Machine Learning.
+                    </p>
+
+                    <time datetime="2026-08-20">
+                        20 August 2026
+                    </time>
+
+                </article>
+
+
+                <article class="slide">
+
+                    <h3>Annual Hackathon</h3>
+
+                    <p>
+                        Create innovative projects and compete with
+                        talented students.
+                    </p>
+
+                    <time datetime="2026-08-25">
+                        25 August 2026
+                    </time>
+
+                </article>
+
+
+                <article class="slide">
+
+                    <h3>Sports Meet</h3>
+
+                    <p>
+                        Participate in various sports and represent
+                        your department.
+                    </p>
+
+                    <time datetime="2026-09-05">
+                        5 September 2026
+                    </time>
+
+                </article>
+
+            </div>
+
+
+            <div class="slider-controls">
+
+                <button id="previousSlide">
+                    Previous
+                </button>
+
+                <button id="nextSlide">
+                    Next
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Feature Cards -->
+        <section>
+
+            <h2>StudentHub Features</h2>
+
+            <div class="dashboard-grid">
+
+                <article class="card">
+
+                    <h3>Student Dashboard</h3>
+
+                    <p>
+                        View your academic activities and
+                        important information.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Campus Events</h3>
+
+                    <p>
+                        Discover workshops, seminars,
+                        hackathons and sports.
+                    </p>
+
+                </article>
+
+
+                <article class="card">
+
+                    <h3>Student Profile</h3>
+
+                    <p>
+                        Manage your personal and academic details.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Modal Trigger -->
+        <section>
+
+            <h2>StudentHub Information</h2>
+
+            <p>
+                Want to know more about StudentHub?
+            </p>
+
+            <button id="openModal">
+                Learn More
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Modal -->
+    <div id="eventModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                id="closeModal"
+                class="modal-close"
+                aria-label="Close modal">
+                ×
+            </button>
+
+            <h2>About StudentHub</h2>
+
+            <p>
+                StudentHub is a student-focused platform that helps
+                learners manage activities, events, profiles and
+                campus communication.
+            </p>
+
+            <button id="modalCloseButton">
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

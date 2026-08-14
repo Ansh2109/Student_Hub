@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - Register</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>StudentHub</h1>
+
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <nav id="mainNav" aria-label="Main Navigation">
+
+                <ul>
+
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+
+                    <li>
+                        <a href="register.html" aria-current="page">
+                            Register
+                        </a>
+                    </li>
+
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+
+                </ul>
+
+            </nav>
+
+            <button id="themeToggle" class="theme-toggle">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <aside>
+
+        <h2>Registration Tips</h2>
+
+        <ul>
+
+            <li>Fill all required fields.</li>
+            <li>Use a valid email address.</li>
+            <li>Use a strong password.</li>
+
+        </ul>
+
+    </aside>
+
+
+    <main>
+
+        <section>
+
+            <h2>Student Registration</h2>
+
+            <p>
+                Create your StudentHub account.
+            </p>
+
+
+            <div
+                id="registerMessage"
+                class="success-message"
+                aria-live="polite">
+            </div>
+
+
+            <form id="registerForm">
+
+                <fieldset>
+
+                    <legend>Personal Information</legend>
+
+                    <label for="fullname">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        placeholder="Enter your full name"
+                        required>
+
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="student@example.com"
+                        required>
+
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="9876543210"
+                        pattern="[0-9]{10}"
+                        required>
+
+
+                    <label for="dob">
+                        Date of Birth
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dob"
+                        name="dob"
+                        required>
+
+                </fieldset>
+
+
+                <fieldset>
+
+                    <legend>Academic Information</legend>
+
+                    <label for="course">
+                        Course
+                    </label>
+
+                    <select
+                        id="course"
+                        name="course"
+                        required>
+
+                        <option value="">
+                            Select Course
+                        </option>
+
+                        <option value="aiml">
+                            B.Tech AIML
+                        </option>
+
+                        <option value="cse">
+                            B.Tech CSE
+                        </option>
+
+                        <option value="it">
+                            B.Tech IT
+                        </option>
+
+                        <option value="ce">
+                            B.Tech CE
+                        </option>
+
+                    </select>
+
+
+                    <label for="semester">
+                        Semester
+                    </label>
+
+                    <select
+                        id="semester"
+                        name="semester"
+                        required>
+
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+
+                    </select>
+
+                </fieldset>
+
+
+                <fieldset>
+
+                    <legend>Account Details</legend>
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        minlength="6"
+                        placeholder="Enter password"
+                        required>
+
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        minlength="6"
+                        placeholder="Confirm password"
+                        required>
+
+                </fieldset>
+
+
+                <div class="checkbox-group">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                        required>
+
+                    <label for="terms">
+                        I agree to the Terms and Conditions.
+                    </label>
+
+                </div>
+
+
+                <button type="submit">
+                    Register
+                </button>
+
+                <button type="reset" class="secondary-button">
+                    Clear
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>

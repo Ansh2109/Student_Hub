@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - Dashboard</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         Header
+    ========================== -->
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>StudentHub</h1>
+
+            <!-- Hamburger Button -->
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                aria-label="Open navigation menu">
+                ☰
+            </button>
+
+            <!-- Navigation -->
+            <nav id="mainNav" aria-label="Main Navigation">
+
+                <ul>
+
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="register.html">
+                            Register
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="dashboard.html"
+                            aria-current="page">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="events.html">
+                            Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="profile.html">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin.html">
+                            Admin
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="feedback.html">
+                            Feedback
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Theme Button -->
+            <button
+                id="themeToggle"
+                class="theme-toggle">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         Sidebar
+    ========================== -->
+
+    <aside>
+
+        <h2>Dashboard Menu</h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="profile.html">
+                    My Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="events.html">
+                    Events
+                </a>
+            </li>
+
+            <li>
+                <a href="feedback.html">
+                    Feedback
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact Support
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- =========================
+         Main Content
+    ========================== -->
+
+    <main>
+
+        <!-- Welcome Section -->
+        <section>
+
+            <h2>Welcome to Your Dashboard</h2>
+
+            <p>
+                You have successfully logged in to StudentHub.
+                Here you can view your academic information,
+                upcoming events and recent activities.
+            </p>
+
+            <!-- Logout Button -->
+            <button id="logoutButton">
+                Logout
+            </button>
+
+        </section>
+
+
+        <!-- Student Information -->
+        <section>
+
+            <h2>Student Information</h2>
+
+            <article>
+
+                <h3>Personal Details</h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    Student User
+                </p>
+
+                <p>
+                    <strong>Enrollment Number:</strong>
+                    AIML2026001
+                </p>
+
+                <p>
+                    <strong>Course:</strong>
+                    B.Tech AIML
+                </p>
+
+                <p>
+                    <strong>Semester:</strong>
+                    5
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- Dashboard Statistics -->
+        <section>
+
+            <h2>Academic Summary</h2>
+
+            <div class="dashboard-grid">
+
+                <!-- Course Card -->
+                <article class="card">
+
+                    <h3>Courses</h3>
+
+                    <p class="big-number">
+                        6
+                    </p>
+
+                    <p>
+                        Active Courses
+                    </p>
+
+                </article>
+
+
+                <!-- Attendance Card -->
+                <article class="card">
+
+                    <h3>Attendance</h3>
+
+                    <p class="big-number">
+                        92%
+                    </p>
+
+                    <p>
+                        Overall Attendance
+                    </p>
+
+                </article>
+
+
+                <!-- Event Card -->
+                <article class="card">
+
+                    <h3>Events</h3>
+
+                    <p class="big-number">
+                        4
+                    </p>
+
+                    <p>
+                        Upcoming Events
+                    </p>
+
+                </article>
+
+
+                <!-- Assignment Card -->
+                <article class="card">
+
+                    <h3>Assignments</h3>
+
+                    <p class="big-number">
+                        3
+                    </p>
+
+                    <p>
+                        Pending Assignments
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Upcoming Activities -->
+        <section>
+
+            <h2>Upcoming Activities</h2>
+
+
+            <article>
+
+                <h3>AI & Machine Learning Workshop</h3>
+
+                <p>
+                    Learn the basics of Artificial Intelligence
+                    and Machine Learning.
+                </p>
+
+                <p>
+
+                    <strong>Date:</strong>
+
+                    <time datetime="2026-08-20">
+                        20 August 2026
+                    </time>
+
+                </p>
+
+                <p>
+                    <strong>Venue:</strong>
+                    Seminar Hall
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>Annual Hackathon</h3>
+
+                <p>
+                    Participate in the annual college hackathon
+                    and develop an innovative project.
+                </p>
+
+                <p>
+
+                    <strong>Date:</strong>
+
+                    <time datetime="2026-08-25">
+                        25 August 2026
+                    </time>
+
+                </p>
+
+                <p>
+                    <strong>Venue:</strong>
+                    Innovation Lab
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <!-- Recent Activities -->
+        <section>
+
+            <h2>Recent Activities</h2>
+
+            <ul>
+
+                <li>
+                    Successfully logged into StudentHub.
+                </li>
+
+                <li>
+                    Registered for the AI Workshop.
+                </li>
+
+                <li>
+                    Viewed upcoming college events.
+                </li>
+
+                <li>
+                    Updated student profile information.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+        <section>
+
+            <h2>Quick Actions</h2>
+
+            <div class="button-group">
+
+                <a
+                    href="profile.html"
+                    class="btn">
+                    View Profile
+                </a>
+
+                <a
+                    href="events.html"
+                    class="btn">
+                    View Events
+                </a>
+
+                <a
+                    href="feedback.html"
+                    class="btn">
+                    Give Feedback
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         Footer
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 StudentHub.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+
+</body>
+
+</html>
