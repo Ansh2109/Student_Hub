@@ -1,23 +1,29 @@
-const menuToggle = document.getElementById("menuToggle");
-const mainNav = document.getElementById("mainNav");
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const mainNav =
+    document.getElementById("mainNav");
 
 if (menuToggle && mainNav) {
 
-    menuToggle.addEventListener("click", function () {
+    menuToggle.addEventListener(
+        "click",
+        function () {
 
-        mainNav.classList.toggle("open");
+            mainNav.classList.toggle("open");
 
-        const isOpen =
-            mainNav.classList.contains("open");
+            const isOpen =
+                mainNav.classList.contains("open");
 
-        menuToggle.setAttribute(
-            "aria-label",
-            isOpen
-                ? "Close navigation menu"
-                : "Open navigation menu"
-        );
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+            );
 
-    });
+        }
+    );
 
 }
 
@@ -29,14 +35,15 @@ if (menuToggle && mainNav) {
 const themeToggle =
     document.getElementById("themeToggle");
 
-
 function updateThemeButton() {
 
     if (!themeToggle) {
         return;
     }
 
-    if (document.body.classList.contains("dark-theme")) {
+    if (
+        document.body.classList.contains("dark-theme")
+    ) {
 
         themeToggle.textContent =
             "☀️ Light Mode";
@@ -50,63 +57,17 @@ function updateThemeButton() {
 
 }
 
-
-const savedTheme =
-    localStorage.getItem("studentHubTheme");
-
-
-if (savedTheme === "dark") {
-
-    document.body.classList.add("dark-theme");
-
-}
-
-
-updateThemeButton();
-
-
 if (themeToggle) {
 
-    themeToggle.addEventListener("click", function () {
-
-        document.body.classList.toggle("dark-theme");
-
-
-        const isDark =
-            document.body.classList.contains("dark-theme");
-
-
-        localStorage.setItem(
-            "studentHubTheme",
-            isDark ? "dark" : "light"
-        );
-
-
-        updateThemeButton();
-
-    });
-
-}
-
-
-/* =================================================
-   3. NOTIFICATION BANNER
-================================================= */
-
-const notification =
-    document.getElementById("notification");
-
-const closeNotification =
-    document.getElementById("closeNotification");
-
-
-if (notification && closeNotification) {
-
-    closeNotification.addEventListener(
+    themeToggle.addEventListener(
         "click",
         function () {
 
-            notification.style.display = "none";
+            document.body.classList.toggle(
+                "dark-theme"
+            );
+
+            updateThemeButton();
 
         }
     );
@@ -115,7 +76,35 @@ if (notification && closeNotification) {
 
 
 /* =================================================
-   4. MODAL POPUP
+   3. NOTIFICATION
+================================================= */
+
+const notification =
+    document.getElementById("notification");
+
+const closeNotification =
+    document.getElementById("closeNotification");
+
+if (
+    notification &&
+    closeNotification
+) {
+
+    closeNotification.addEventListener(
+        "click",
+        function () {
+
+            notification.style.display =
+                "none";
+
+        }
+    );
+
+}
+
+
+/* =================================================
+   4. MODAL
 ================================================= */
 
 const eventModal =
@@ -143,16 +132,13 @@ function showModal(title, text) {
         return;
     }
 
-
     if (modalTitle) {
         modalTitle.textContent = title;
     }
 
-
     if (modalText) {
         modalText.textContent = text;
     }
-
 
     eventModal.classList.add("show");
 
@@ -213,7 +199,9 @@ if (eventModal) {
         "click",
         function (event) {
 
-            if (event.target === eventModal) {
+            if (
+                event.target === eventModal
+            ) {
 
                 hideModal();
 
@@ -226,7 +214,7 @@ if (eventModal) {
 
 
 /* =================================================
-   EVENT PAGE MODAL BUTTONS
+   5. EVENT MODAL BUTTONS
 ================================================= */
 
 const eventButtons =
@@ -234,30 +222,30 @@ const eventButtons =
         ".event-details-btn"
     );
 
+eventButtons.forEach(
+    function (button) {
 
-eventButtons.forEach(function (button) {
+        button.addEventListener(
+            "click",
+            function () {
 
-    button.addEventListener(
-        "click",
-        function () {
+                const eventName =
+                    button.dataset.event;
 
-            const eventName =
-                button.dataset.event;
+                showModal(
+                    eventName,
+                    "You can register for this event through the StudentHub Events section."
+                );
 
+            }
+        );
 
-            showModal(
-                eventName,
-                "You can register for this event through the StudentHub Events section."
-            );
-
-        }
-    );
-
-});
+    }
+);
 
 
 /* =================================================
-   5. CONTENT SLIDER
+   6. CONTENT SLIDER
 ================================================= */
 
 const slides =
@@ -269,7 +257,6 @@ const nextSlide =
 const previousSlide =
     document.getElementById("previousSlide");
 
-
 let currentSlide = 0;
 
 
@@ -279,13 +266,13 @@ function showSlide(index) {
         return;
     }
 
+    slides.forEach(
+        function (slide) {
 
-    slides.forEach(function (slide) {
+            slide.classList.remove("active");
 
-        slide.classList.remove("active");
-
-    });
-
+        }
+    );
 
     slides[index].classList.add("active");
 
@@ -296,7 +283,6 @@ if (slides.length > 0) {
 
     showSlide(currentSlide);
 
-
     if (nextSlide) {
 
         nextSlide.addEventListener(
@@ -305,16 +291,13 @@ if (slides.length > 0) {
 
                 currentSlide++;
 
-
                 if (
-                    currentSlide >=
-                    slides.length
+                    currentSlide >= slides.length
                 ) {
 
                     currentSlide = 0;
 
                 }
-
 
                 showSlide(currentSlide);
 
@@ -322,7 +305,6 @@ if (slides.length > 0) {
         );
 
     }
-
 
     if (previousSlide) {
 
@@ -332,14 +314,12 @@ if (slides.length > 0) {
 
                 currentSlide--;
 
-
                 if (currentSlide < 0) {
 
                     currentSlide =
                         slides.length - 1;
 
                 }
-
 
                 showSlide(currentSlide);
 
@@ -352,7 +332,7 @@ if (slides.length > 0) {
 
 
 /* =================================================
-   6. COLLAPSIBLE FAQ
+   7. FAQ
 ================================================= */
 
 const faqQuestions =
@@ -360,50 +340,84 @@ const faqQuestions =
         ".faq-question"
     );
 
+faqQuestions.forEach(
+    function (question) {
 
-faqQuestions.forEach(function (question) {
+        question.addEventListener(
+            "click",
+            function () {
 
-    question.addEventListener(
-        "click",
+                const answer =
+                    question.nextElementSibling;
+
+                const icon =
+                    question.querySelector("span");
+
+                answer.classList.toggle("open");
+
+                const isOpen =
+                    answer.classList.contains("open");
+
+                if (icon) {
+
+                    icon.textContent =
+                        isOpen ? "−" : "+";
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =================================================
+   8. PHONE INPUT
+   Practical 5
+================================================= */
+
+const phoneInput =
+    document.getElementById("phone");
+
+if (phoneInput) {
+
+    phoneInput.addEventListener(
+        "input",
         function () {
 
-            const answer =
-                question.nextElementSibling;
+            /* Allow only numbers */
 
-            const icon =
-                question.querySelector("span");
+            this.value =
+                this.value.replace(
+                    /[^0-9]/g,
+                    ""
+                );
 
+            /* Maximum 10 digits */
 
-            answer.classList.toggle("open");
+            if (this.value.length > 10) {
 
-
-            const isOpen =
-                answer.classList.contains("open");
-
-
-            if (icon) {
-
-                icon.textContent =
-                    isOpen ? "−" : "+";
+                this.value =
+                    this.value.slice(
+                        0,
+                        10
+                    );
 
             }
 
         }
     );
 
-});
+}
 
 
 /* =================================================
-   7. REGISTRATION FORM
+   9. REGISTRATION FORM
 ================================================= */
 
 const registerForm =
     document.getElementById("registerForm");
-
-const registerMessage =
-    document.getElementById("registerMessage");
-
 
 if (registerForm) {
 
@@ -414,70 +428,328 @@ if (registerForm) {
             event.preventDefault();
 
 
+            /* ---------- Get Values ---------- */
+
             const fullname =
-                document.getElementById("fullname").value;
+                document.getElementById(
+                    "fullname"
+                ).value.trim();
 
             const email =
-                document.getElementById("email").value;
+                document.getElementById(
+                    "email"
+                ).value.trim();
 
             const phone =
-                document.getElementById("phone").value;
+                document.getElementById(
+                    "phone"
+                ).value.trim();
+
+            const dob =
+                document.getElementById(
+                    "dob"
+                ).value;
 
             const password =
-                document.getElementById("password").value;
+                document.getElementById(
+                    "password"
+                ).value;
 
             const confirmPassword =
                 document.getElementById(
                     "confirmPassword"
                 ).value;
 
+            const course =
+                document.getElementById(
+                    "course"
+                ).value;
 
-            if (password !== confirmPassword) {
+            const year =
+                document.getElementById(
+                    "year"
+                ).value;
 
-                registerMessage.textContent =
-                    "Passwords do not match.";
+            const terms =
+                document.getElementById(
+                    "terms"
+                ).checked;
 
-                registerMessage.className =
-                    "error-message show";
 
-                return;
+            /* ---------- Regex ---------- */
+
+            const namePattern =
+                /^[A-Za-z ]+$/;
+
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            const phonePattern =
+                /^[0-9]{10}$/;
+
+            const passwordPattern =
+                /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+
+
+            /* ---------- Error Elements ---------- */
+
+            const nameError =
+                document.getElementById(
+                    "nameError"
+                );
+
+            const emailError =
+                document.getElementById(
+                    "emailError"
+                );
+
+            const phoneError =
+                document.getElementById(
+                    "phoneError"
+                );
+
+            const passwordError =
+                document.getElementById(
+                    "passwordError"
+                );
+
+            const confirmPasswordError =
+                document.getElementById(
+                    "confirmPasswordError"
+                );
+
+            const courseError =
+                document.getElementById(
+                    "courseError"
+                );
+
+            const yearError =
+                document.getElementById(
+                    "yearError"
+                );
+
+            const genderError =
+                document.getElementById(
+                    "genderError"
+                );
+
+            const termsError =
+                document.getElementById(
+                    "termsError"
+                );
+
+
+            /* ---------- Clear Old Errors ---------- */
+
+            nameError.textContent = "";
+            emailError.textContent = "";
+            phoneError.textContent = "";
+            passwordError.textContent = "";
+            confirmPasswordError.textContent = "";
+            courseError.textContent = "";
+            yearError.textContent = "";
+            genderError.textContent = "";
+            termsError.textContent = "";
+
+
+            let isValid = true;
+
+
+            /* ---------- Name ---------- */
+
+            if (fullname === "") {
+
+                nameError.textContent =
+                    "Name is required.";
+
+                isValid = false;
+
+            } else if (
+                !namePattern.test(fullname)
+            ) {
+
+                nameError.textContent =
+                    "Name should contain only letters and spaces.";
+
+                isValid = false;
 
             }
 
 
-            const student = {
+            /* ---------- Email ---------- */
 
-                fullname: fullname,
-                email: email,
-                phone: phone,
-                password: password
+            if (email === "") {
 
-            };
+                emailError.textContent =
+                    "Email is required.";
 
+                isValid = false;
 
-            localStorage.setItem(
-                "studentHubUser",
-                JSON.stringify(student)
-            );
+            } else if (
+                !emailPattern.test(email)
+            ) {
 
+                emailError.textContent =
+                    "Please enter a valid email address.";
 
-            registerMessage.textContent =
-                "Registration successful! Redirecting to login...";
+                isValid = false;
 
-
-            registerMessage.className =
-                "success-message show";
+            }
 
 
-            registerForm.reset();
+            /* ---------- Mobile ---------- */
+
+            if (phone === "") {
+
+                phoneError.textContent =
+                    "Mobile number is required.";
+
+                isValid = false;
+
+            } else if (
+                !phonePattern.test(phone)
+            ) {
+
+                phoneError.textContent =
+                    "Mobile number must contain exactly 10 digits.";
+
+                isValid = false;
+
+            }
 
 
-            setTimeout(function () {
+            /* ---------- Date of Birth ---------- */
 
-                window.location.href =
-                    "login.html";
+            if (dob === "") {
 
-            }, 1500);
+                isValid = false;
+
+            }
+
+
+            /* ---------- Password ---------- */
+
+            if (password === "") {
+
+                passwordError.textContent =
+                    "Password is required.";
+
+                isValid = false;
+
+            } else if (
+                !passwordPattern.test(password)
+            ) {
+
+                passwordError.textContent =
+                    "Password must contain at least 6 characters, including a letter and a number.";
+
+                isValid = false;
+
+            }
+
+
+            /* ---------- Confirm Password ---------- */
+
+            if (confirmPassword === "") {
+
+                confirmPasswordError.textContent =
+                    "Please confirm your password.";
+
+                isValid = false;
+
+            } else if (
+                password !== confirmPassword
+            ) {
+
+                confirmPasswordError.textContent =
+                    "Passwords do not match.";
+
+                isValid = false;
+
+            }
+
+
+            /* ---------- Course ---------- */
+
+            if (course === "") {
+
+                courseError.textContent =
+                    "Please select a course.";
+
+                isValid = false;
+
+            }
+
+
+            /* ---------- Year ---------- */
+
+            if (year === "") {
+
+                yearError.textContent =
+                    "Please select your year.";
+
+                isValid = false;
+
+            }
+
+
+            /* ---------- Gender ---------- */
+
+            const gender =
+                document.querySelector(
+                    'input[name="gender"]:checked'
+                );
+
+            if (!gender) {
+
+                genderError.textContent =
+                    "Please select your gender.";
+
+                isValid = false;
+
+            }
+
+
+            /* ---------- Terms ---------- */
+
+            if (!terms) {
+
+                termsError.textContent =
+                    "You must accept the Terms and Conditions.";
+
+                isValid = false;
+
+            }
+
+
+            /* ---------- Success ---------- */
+
+            if (isValid) {
+
+                const registerMessage =
+                    document.getElementById(
+                        "registerMessage"
+                    );
+
+                registerMessage.textContent =
+                    "Registration successful! Redirecting to login page...";
+
+                registerMessage.className =
+                    "success-message show";
+
+                registerForm.reset();
+
+                setTimeout(
+                    function () {
+
+                        window.location.href =
+                            "login.html";
+
+                    },
+                    1500
+                );
+
+            }
 
         }
     );
@@ -486,7 +758,8 @@ if (registerForm) {
 
 
 /* =================================================
-   8. LOGIN FORM
+   10. LOGIN FORM
+   Simple frontend demo
 ================================================= */
 
 const loginForm =
@@ -494,7 +767,6 @@ const loginForm =
 
 const loginMessage =
     document.getElementById("loginMessage");
-
 
 if (loginForm) {
 
@@ -504,12 +776,10 @@ if (loginForm) {
 
             event.preventDefault();
 
-
             const loginEmail =
                 document.getElementById(
                     "loginEmail"
-                ).value;
-
+                ).value.trim();
 
             const loginPassword =
                 document.getElementById(
@@ -517,16 +787,13 @@ if (loginForm) {
                 ).value;
 
 
-            const storedUser =
-                localStorage.getItem(
-                    "studentHubUser"
-                );
-
-
-            if (!storedUser) {
+            if (
+                loginEmail === "" ||
+                loginPassword === ""
+            ) {
 
                 loginMessage.textContent =
-                    "No account found. Please register first.";
+                    "Please enter your email and password.";
 
                 loginMessage.className =
                     "error-message show";
@@ -536,45 +803,22 @@ if (loginForm) {
             }
 
 
-            const user =
-                JSON.parse(storedUser);
+            loginMessage.textContent =
+                "Login successful! Redirecting to dashboard...";
+
+            loginMessage.className =
+                "success-message show";
 
 
-            if (
-                loginEmail === user.email &&
-                loginPassword === user.password
-            ) {
-
-                localStorage.setItem(
-                    "studentHubLoggedIn",
-                    "true"
-                );
-
-
-                loginMessage.textContent =
-                    "Login successful! Redirecting to dashboard...";
-
-
-                loginMessage.className =
-                    "success-message show";
-
-
-                setTimeout(function () {
+            setTimeout(
+                function () {
 
                     window.location.href =
                         "dashboard.html";
 
-                }, 1000);
-
-            } else {
-
-                loginMessage.textContent =
-                    "Invalid email or password.";
-
-                loginMessage.className =
-                    "error-message show";
-
-            }
+                },
+                1000
+            );
 
         }
     );
@@ -583,7 +827,7 @@ if (loginForm) {
 
 
 /* =================================================
-   9. CONTACT FORM
+   11. CONTACT FORM
 ================================================= */
 
 const contactForm =
@@ -591,7 +835,6 @@ const contactForm =
 
 const contactMessage =
     document.getElementById("contactMessage");
-
 
 if (contactForm) {
 
@@ -601,14 +844,11 @@ if (contactForm) {
 
             event.preventDefault();
 
-
             contactMessage.textContent =
                 "Your message has been sent successfully!";
 
-
             contactMessage.className =
                 "success-message show";
-
 
             contactForm.reset();
 
@@ -619,7 +859,7 @@ if (contactForm) {
 
 
 /* =================================================
-   10. FEEDBACK FORM
+   12. FEEDBACK FORM
 ================================================= */
 
 const feedbackForm =
@@ -627,7 +867,6 @@ const feedbackForm =
 
 const feedbackMessage =
     document.getElementById("feedbackMessage");
-
 
 if (feedbackForm) {
 
@@ -637,14 +876,11 @@ if (feedbackForm) {
 
             event.preventDefault();
 
-
             feedbackMessage.textContent =
                 "Thank you! Your feedback has been submitted successfully.";
 
-
             feedbackMessage.className =
                 "success-message show";
-
 
             feedbackForm.reset();
 
@@ -652,35 +888,33 @@ if (feedbackForm) {
     );
 
 }
+
+
 /* =================================================
-   11. DASHBOARD LOGIN PROTECTION
+   13. DASHBOARD
+   No localStorage for now
 ================================================= */
 
-const currentPage = window.location.pathname;
 
-if (currentPage.includes("dashboard.html")) {
-
-    const loggedIn =
-        localStorage.getItem("studentHubLoggedIn");
-
-    if (loggedIn !== "true") {
-
-        window.location.href = "login.html";
-
-    }
-}
+/* =================================================
+   14. LOGOUT
+================================================= */
 
 const logoutButton =
-    document.getElementById("logoutButton");
+    document.getElementById(
+        "logoutButton"
+    );
 
 if (logoutButton) {
 
-    logoutButton.addEventListener("click", function () {
+    logoutButton.addEventListener(
+        "click",
+        function () {
 
-        localStorage.removeItem("studentHubLoggedIn");
+            window.location.href =
+                "login.html";
 
-        window.location.href = "login.html";
-
-    });
+        }
+    );
 
 }

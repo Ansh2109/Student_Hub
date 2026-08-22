@@ -1071,3 +1071,29 @@ body.dark-theme .theme-toggle {
 body.dark-theme .theme-toggle:hover {
     background: #ffa726;
 }
+
+
+.error-text {
+    display: block;
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+
+body.dark-theme .error-text {
+    color: #ff8a8a;
+}
+
+
+
+fieldset .checkbox-group {
+    margin-bottom: 10px;
+}
+
+
+
+fieldset .checkbox-group label {
+    display: inline;
+}

@@ -15,12 +15,17 @@
 
 <body>
 
+    <!-- =========================
+         Header
+    ========================== -->
+
     <header>
 
         <div class="header-content">
 
             <h1>StudentHub</h1>
 
+            <!-- Hamburger Menu -->
             <button
                 id="menuToggle"
                 class="menu-toggle"
@@ -28,12 +33,22 @@
                 ☰
             </button>
 
+            <!-- Navigation -->
             <nav id="mainNav" aria-label="Main Navigation">
 
                 <ul>
 
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
 
                     <li>
                         <a href="register.html" aria-current="page">
@@ -41,20 +56,62 @@
                         </a>
                     </li>
 
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="admin.html">Admin</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="feedback.html">Feedback</a></li>
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="dashboard.html">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="events.html">
+                            Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="profile.html">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="admin.html">
+                            Admin
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="feedback.html">
+                            Feedback
+                        </a>
+                    </li>
 
                 </ul>
 
             </nav>
 
-            <button id="themeToggle" class="theme-toggle">
+            <!-- Theme Button -->
+            <button
+                id="themeToggle"
+                class="theme-toggle">
                 🌙 Dark Mode
             </button>
 
@@ -63,20 +120,48 @@
     </header>
 
 
+    <!-- =========================
+         Sidebar
+    ========================== -->
+
     <aside>
 
         <h2>Registration Tips</h2>
 
         <ul>
 
-            <li>Fill all required fields.</li>
-            <li>Use a valid email address.</li>
-            <li>Use a strong password.</li>
+            <li>
+                Enter your full name.
+            </li>
+
+            <li>
+                Enter a valid email address.
+            </li>
+
+            <li>
+                Mobile number must contain 10 digits.
+            </li>
+
+            <li>
+                Password must contain a letter and a number.
+            </li>
+
+            <li>
+                Select your course, year and gender.
+            </li>
+
+            <li>
+                Accept the Terms and Conditions.
+            </li>
 
         </ul>
 
     </aside>
 
+
+    <!-- =========================
+         Main Content
+    ========================== -->
 
     <main>
 
@@ -85,9 +170,12 @@
             <h2>Student Registration</h2>
 
             <p>
-                Create your StudentHub account.
+                Create your StudentHub account by completing
+                the registration form below.
             </p>
 
+
+            <!-- Success Message -->
 
             <div
                 id="registerMessage"
@@ -96,11 +184,23 @@
             </div>
 
 
+            <!-- Registration Form -->
+
             <form id="registerForm">
+
+
+                <!-- =========================
+                     Personal Information
+                ========================== -->
 
                 <fieldset>
 
-                    <legend>Personal Information</legend>
+                    <legend>
+                        Personal Information
+                    </legend>
+
+
+                    <!-- Name -->
 
                     <label for="fullname">
                         Full Name
@@ -113,6 +213,13 @@
                         placeholder="Enter your full name"
                         required>
 
+                    <span
+                        id="nameError"
+                        class="error-text">
+                    </span>
+
+
+                    <!-- Email -->
 
                     <label for="email">
                         Email Address
@@ -125,9 +232,16 @@
                         placeholder="student@example.com"
                         required>
 
+                    <span
+                        id="emailError"
+                        class="error-text">
+                    </span>
+
+
+                    <!-- Mobile Number -->
 
                     <label for="phone">
-                        Phone Number
+                        Mobile Number
                     </label>
 
                     <input
@@ -135,9 +249,17 @@
                         id="phone"
                         name="phone"
                         placeholder="9876543210"
-                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        inputmode="numeric"
                         required>
 
+                    <span
+                        id="phoneError"
+                        class="error-text">
+                    </span>
+
+
+                    <!-- Date of Birth -->
 
                     <label for="dob">
                         Date of Birth
@@ -152,9 +274,69 @@
                 </fieldset>
 
 
+                <!-- =========================
+                     Account Information
+                ========================== -->
+
                 <fieldset>
 
-                    <legend>Academic Information</legend>
+                    <legend>
+                        Account Information
+                    </legend>
+
+
+                    <!-- Password -->
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter password"
+                        required>
+
+                    <span
+                        id="passwordError"
+                        class="error-text">
+                    </span>
+
+
+                    <!-- Confirm Password -->
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm password"
+                        required>
+
+                    <span
+                        id="confirmPasswordError"
+                        class="error-text">
+                    </span>
+
+                </fieldset>
+
+
+                <!-- =========================
+                     Academic Information
+                ========================== -->
+
+                <fieldset>
+
+                    <legend>
+                        Academic Information
+                    </legend>
+
+
+                    <!-- Course -->
 
                     <label for="course">
                         Course
@@ -187,65 +369,121 @@
 
                     </select>
 
+                    <span
+                        id="courseError"
+                        class="error-text">
+                    </span>
 
-                    <label for="semester">
-                        Semester
+
+                    <!-- Year -->
+
+                    <label for="year">
+                        Year
                     </label>
 
                     <select
-                        id="semester"
-                        name="semester"
+                        id="year"
+                        name="year"
                         required>
 
                         <option value="">
-                            Select Semester
+                            Select Year
                         </option>
 
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
+                        <option value="first">
+                            First Year
+                        </option>
+
+                        <option value="second">
+                            Second Year
+                        </option>
+
+                        <option value="third">
+                            Third Year
+                        </option>
+
+                        <option value="fourth">
+                            Fourth Year
+                        </option>
 
                     </select>
 
+                    <span
+                        id="yearError"
+                        class="error-text">
+                    </span>
+
                 </fieldset>
 
+
+                <!-- =========================
+                     Gender
+                ========================== -->
 
                 <fieldset>
 
-                    <legend>Account Details</legend>
-
-                    <label for="password">
-                        Password
-                    </label>
-
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        minlength="6"
-                        placeholder="Enter password"
-                        required>
+                    <legend>
+                        Gender
+                    </legend>
 
 
-                    <label for="confirmPassword">
-                        Confirm Password
-                    </label>
+                    <div class="checkbox-group">
 
-                    <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        minlength="6"
-                        placeholder="Confirm password"
-                        required>
+                        <input
+                            type="radio"
+                            id="male"
+                            name="gender"
+                            value="male"
+                            required>
+
+                        <label for="male">
+                            Male
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-group">
+
+                        <input
+                            type="radio"
+                            id="female"
+                            name="gender"
+                            value="female">
+
+                        <label for="female">
+                            Female
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-group">
+
+                        <input
+                            type="radio"
+                            id="other"
+                            name="gender"
+                            value="other">
+
+                        <label for="other">
+                            Other
+                        </label>
+
+                    </div>
+
+
+                    <span
+                        id="genderError"
+                        class="error-text">
+                    </span>
 
                 </fieldset>
 
+
+                <!-- =========================
+                     Terms
+                ========================== -->
 
                 <div class="checkbox-group">
 
@@ -256,17 +494,26 @@
                         required>
 
                     <label for="terms">
-                        I agree to the Terms and Conditions.
+                        I accept the Terms and Conditions.
                     </label>
 
                 </div>
 
+                <span
+                    id="termsError"
+                    class="error-text">
+                </span>
+
+
+                <!-- Buttons -->
 
                 <button type="submit">
                     Register
                 </button>
 
-                <button type="reset" class="secondary-button">
+                <button
+                    type="reset"
+                    class="secondary-button">
                     Clear
                 </button>
 
@@ -277,14 +524,21 @@
     </main>
 
 
+    <!-- =========================
+         Footer
+    ========================== -->
+
     <footer>
 
         <p>
-            &copy; 2026 StudentHub. All Rights Reserved.
+            &copy; 2026 StudentHub.
+            All Rights Reserved.
         </p>
 
     </footer>
 
+
+    <!-- JavaScript -->
 
     <script src="../js/script.js"></script>
 
