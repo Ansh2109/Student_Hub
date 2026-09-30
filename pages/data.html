@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub - JSON Data</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css">
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="header-content">
+
+            <h1>StudentHub</h1>
+
+            <button
+                id="menuToggle"
+                class="menu-toggle"
+                aria-label="Open navigation menu">
+                ☰
+            </button>
+
+
+            <nav
+                id="mainNav"
+                aria-label="Main Navigation">
+
+                <ul>
+
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="register.html">
+                            Register
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="dashboard.html">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="events.html">
+                            Events
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="profile.html">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="data.html"
+                           aria-current="page">
+                            JSON Data
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="faq.html">
+                            FAQ
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main -->
+
+    <main>
+
+        <section>
+
+            <h2>
+                Data
+            </h2>
+
+            <p>
+                Events, students and FAQs are loaded
+                dynamically using the Fetch API.
+            </p>
+
+        </section>
+
+
+        <!-- Controls -->
+
+        <section>
+
+            <label for="dataType">
+                Select Data:
+            </label>
+
+            <select id="dataType">
+
+                <option value="events">
+                    Events
+                </option>
+
+                <option value="students">
+                    Students
+                </option>
+
+                <option value="faqs">
+                    FAQs
+                </option>
+
+            </select>
+
+
+            <label for="searchInput">
+                Search:
+            </label>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search data...">
+
+
+            <label for="filterSelect">
+                Filter:
+            </label>
+
+            <select id="filterSelect">
+
+                <option value="all">
+                    All
+                </option>
+
+            </select>
+
+
+            <label for="sortSelect">
+                Sort:
+            </label>
+
+            <select id="sortSelect">
+
+                <option value="default">
+                    Default
+                </option>
+
+                <option value="az">
+                    A - Z
+                </option>
+
+                <option value="za">
+                    Z - A
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- Status -->
+
+        <section>
+
+            <p id="loading">
+                Loading data...
+            </p>
+
+            <p id="error"
+               class="error-text">
+            </p>
+
+            <p id="resultCount">
+            </p>
+
+        </section>
+
+
+        <!-- Data cards -->
+
+        <section>
+
+            <div
+                id="dataContainer"
+                class="data-grid">
+            </div>
+
+        </section>
+
+
+        <!-- Pagination -->
+
+        <section>
+
+            <div
+                id="pagination"
+                class="pagination">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 StudentHub.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script
+        type="module"
+        src="../js/practical6.js">
+    </script>
+
+</body>
+
+</html>

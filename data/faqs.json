@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "question": "How do I register on StudentHub?",
+        "category": "Registration",
+        "answer": "Open the Register page and complete the student registration form."
+    },
+    {
+        "id": 2,
+        "question": "How do I login?",
+        "category": "Login",
+        "answer": "Open the Login page and enter your registered email and password."
+    },
+    {
+        "id": 3,
+        "question": "Where can I see upcoming events?",
+        "category": "Events",
+        "answer": "Open the Events section to view upcoming college activities."
+    },
+    {
+        "id": 4,
+        "question": "How can I update my profile?",
+        "category": "Profile",
+        "answer": "Open the Profile page to view your student information."
+    },
+    {
+        "id": 5,
+        "question": "How can I contact support?",
+        "category": "Support",
+        "answer": "Open the Contact page and submit the contact form."
+    },
+    {
+        "id": 6,
+        "question": "How can I register for an event?",
+        "category": "Events",
+        "answer": "Open the Events page and select the required event."
+    },
+    {
+        "id": 7,
+        "question": "What courses are available?",
+        "category": "Academic",
+        "answer": "StudentHub currently lists AIML, CSE, IT and CE programs."
+    },
+    {
+        "id": 8,
+        "question": "How do I submit feedback?",
+        "category": "Feedback",
+        "answer": "Open the Feedback page and submit your comments."
+    },
+    {
+        "id": 9,
+        "question": "Is the registration form mandatory?",
+        "category": "Registration",
+        "answer": "Yes, students should complete all required registration fields."
+    },
+    {
+        "id": 10,
+        "question": "Can I attend technical workshops?",
+        "category": "Events",
+        "answer": "Students can attend workshops that are open to their department or college."
+    },
+    {
+        "id": 11,
+        "question": "Where can I find my academic information?",
+        "category": "Dashboard",
+        "answer": "Your academic summary is displayed on the Dashboard page."
+    },
+    {
+        "id": 12,
+        "question": "How do I access the dashboard?",
+        "category": "Dashboard",
+        "answer": "Use the Dashboard option from the main navigation."
+    },
+    {
+        "id": 13,
+        "question": "Can I participate in sports events?",
+        "category": "Events",
+        "answer": "Yes, students can participate in available college sports events."
+    },
+    {
+        "id": 14,
+        "question": "Where can I submit a suggestion?",
+        "category": "Feedback",
+        "answer": "Use the Feedback page to send your suggestions."
+    },
+    {
+        "id": 15,
+        "question": "Who manages StudentHub?",
+        "category": "General",
+        "answer": "StudentHub includes student and administrator sections for managing campus information."
+    }
+]

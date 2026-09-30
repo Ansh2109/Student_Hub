@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "name": "Ansh Patel",
+        "course": "B.Tech AIML",
+        "year": "Second Year",
+        "department": "AIML",
+        "city": "Anand"
+    },
+    {
+        "id": 2,
+        "name": "Rahul Shah",
+        "course": "B.Tech CSE",
+        "year": "Third Year",
+        "department": "CSE",
+        "city": "Ahmedabad"
+    },
+    {
+        "id": 3,
+        "name": "Priya Mehta",
+        "course": "B.Tech IT",
+        "year": "First Year",
+        "department": "IT",
+        "city": "Vadodara"
+    },
+    {
+        "id": 4,
+        "name": "Dhruv Patel",
+        "course": "B.Tech AIML",
+        "year": "Third Year",
+        "department": "AIML",
+        "city": "Surat"
+    },
+    {
+        "id": 5,
+        "name": "Riya Shah",
+        "course": "B.Tech CSE",
+        "year": "Second Year",
+        "department": "CSE",
+        "city": "Rajkot"
+    },
+    {
+        "id": 6,
+        "name": "Karan Joshi",
+        "course": "B.Tech IT",
+        "year": "Fourth Year",
+        "department": "IT",
+        "city": "Nadiad"
+    },
+    {
+        "id": 7,
+        "name": "Neha Patel",
+        "course": "B.Tech AIML",
+        "year": "First Year",
+        "department": "AIML",
+        "city": "Bharuch"
+    },
+    {
+        "id": 8,
+        "name": "Harsh Shah",
+        "course": "B.Tech CSE",
+        "year": "Fourth Year",
+        "department": "CSE",
+        "city": "Ahmedabad"
+    },
+    {
+        "id": 9,
+        "name": "Isha Desai",
+        "course": "B.Tech IT",
+        "year": "Third Year",
+        "department": "IT",
+        "city": "Vadodara"
+    },
+    {
+        "id": 10,
+        "name": "Yash Patel",
+        "course": "B.Tech AIML",
+        "year": "Second Year",
+        "department": "AIML",
+        "city": "Anand"
+    },
+    {
+        "id": 11,
+        "name": "Mansi Shah",
+        "course": "B.Tech CSE",
+        "year": "First Year",
+        "department": "CSE",
+        "city": "Surat"
+    },
+    {
+        "id": 12,
+        "name": "Dev Mehta",
+        "course": "B.Tech IT",
+        "year": "Second Year",
+        "department": "IT",
+        "city": "Rajkot"
+    },
+    {
+        "id": 13,
+        "name": "Het Patel",
+        "course": "B.Tech AIML",
+        "year": "Fourth Year",
+        "department": "AIML",
+        "city": "Vadodara"
+    },
+    {
+        "id": 14,
+        "name": "Aarav Joshi",
+        "course": "B.Tech CSE",
+        "year": "Third Year",
+        "department": "CSE",
+        "city": "Anand"
+    },
+    {
+        "id": 15,
+        "name": "Kavya Desai",
+        "course": "B.Tech IT",
+        "year": "First Year",
+        "department": "IT",
+        "city": "Bharuch"
+    }
+]

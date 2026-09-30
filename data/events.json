@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1,
+        "title": "AI and Machine Learning Workshop",
+        "category": "Technical",
+        "department": "AIML",
+        "date": "2026-08-20",
+        "venue": "Seminar Hall",
+        "description": "Introduction to Artificial Intelligence and Machine Learning."
+    },
+    {
+        "id": 2,
+        "title": "Annual Hackathon",
+        "category": "Technical",
+        "department": "CSE",
+        "date": "2026-08-25",
+        "venue": "Innovation Lab",
+        "description": "Build innovative projects and compete with other teams."
+    },
+    {
+        "id": 3,
+        "title": "Inter College Cricket",
+        "category": "Sports",
+        "department": "General",
+        "date": "2026-09-05",
+        "venue": "College Ground",
+        "description": "Annual cricket tournament for college students."
+    },
+    {
+        "id": 4,
+        "title": "Cyber Security Seminar",
+        "category": "Technical",
+        "department": "IT",
+        "date": "2026-09-10",
+        "venue": "Auditorium",
+        "description": "Learn about modern cyber security concepts."
+    },
+    {
+        "id": 5,
+        "title": "Freshers Orientation",
+        "category": "Academic",
+        "department": "General",
+        "date": "2026-09-15",
+        "venue": "Main Auditorium",
+        "description": "Orientation program for newly admitted students."
+    },
+    {
+        "id": 6,
+        "title": "Web Development Workshop",
+        "category": "Technical",
+        "department": "CSE",
+        "date": "2026-09-20",
+        "venue": "Computer Lab 1",
+        "description": "Learn modern HTML, CSS and JavaScript."
+    },
+    {
+        "id": 7,
+        "title": "Entrepreneurship Talk",
+        "category": "Business",
+        "department": "Management",
+        "date": "2026-09-25",
+        "venue": "Conference Room",
+        "description": "Industry experts discuss entrepreneurship and startups."
+    },
+    {
+        "id": 8,
+        "title": "Badminton Tournament",
+        "category": "Sports",
+        "department": "General",
+        "date": "2026-10-01",
+        "venue": "Sports Complex",
+        "description": "College level badminton tournament."
+    },
+    {
+        "id": 9,
+        "title": "Python Programming Workshop",
+        "category": "Technical",
+        "department": "AIML",
+        "date": "2026-10-05",
+        "venue": "Lab 3",
+        "description": "Learn Python programming from basic to intermediate level."
+    },
+    {
+        "id": 10,
+        "title": "Cultural Fest",
+        "category": "Cultural",
+        "department": "General",
+        "date": "2026-10-10",
+        "venue": "Open Ground",
+        "description": "Music, dance and cultural performances by students."
+    },
+    {
+        "id": 11,
+        "title": "Data Science Seminar",
+        "category": "Technical",
+        "department": "AIML",
+        "date": "2026-10-15",
+        "venue": "Seminar Hall",
+        "description": "Introduction to data science and analytics."
+    },
+    {
+        "id": 12,
+        "title": "Football Championship",
+        "category": "Sports",
+        "department": "General",
+        "date": "2026-10-20",
+        "venue": "College Ground",
+        "description": "Inter-department football championship."
+    },
+    {
+        "id": 13,
+        "title": "Placement Preparation Session",
+        "category": "Career",
+        "department": "General",
+        "date": "2026-10-25",
+        "venue": "Auditorium",
+        "description": "Preparation session for placements and interviews."
+    },
+    {
+        "id": 14,
+        "title": "Cloud Computing Workshop",
+        "category": "Technical",
+        "department": "IT",
+        "date": "2026-11-01",
+        "venue": "Computer Lab 2",
+        "description": "Learn the fundamentals of cloud computing."
+    },
+    {
+        "id": 15,
+        "title": "Annual Science Exhibition",
+        "category": "Academic",
+        "department": "General",
+        "date": "2026-11-05",
+        "venue": "Exhibition Hall",
+        "description": "Students present innovative science and technology projects."
+    }
+]

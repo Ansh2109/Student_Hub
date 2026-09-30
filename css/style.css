@@ -1097,3 +1097,99 @@ fieldset .checkbox-group {
 fieldset .checkbox-group label {
     display: inline;
 }
+
+
+
+.data-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    );
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+.data-card {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.data-card h3 {
+    color: #003b73;
+    margin-bottom: 12px;
+}
+
+
+.data-card p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+
+/* Pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 25px 0;
+}
+
+
+.pagination button {
+    background: #003b73;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.pagination button:hover {
+    background: #005ba8;
+}
+
+
+.pagination button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+
+.pagination .active-page {
+    background: #ff9800;
+}
+
+
+/* Dark Theme */
+
+body.dark-theme .data-card {
+    background: #252d38;
+    color: #e8eaed;
+    border-color: #3b4553;
+}
+
+
+body.dark-theme .data-card h3 {
+    color: #82b1ff;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .data-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
