@@ -37,6 +37,7 @@ $genderValues = ['male' => 'Male', 'female' => 'Female', 'other' => 'Other'];
 $courseInput = trim((string) ($_POST['course'] ?? ''));
 $yearInput = trim((string) ($_POST['year'] ?? ''));
 $genderInput = trim((string) ($_POST['gender'] ?? ''));
+$studentId = strtoupper(trim((string) ($_POST['student_id'] ?? '')));
 $course = $courseValues[$courseInput] ?? '';
 $year = $yearValues[$yearInput] ?? '';
 $gender = $genderValues[$genderInput] ?? '';
@@ -74,6 +75,9 @@ if ($year === '') {
 if ($gender === '') {
     $errors[] = 'Select a valid gender.';
 }
+if (!preg_match('/^[0-9]{2}(AIML|CSE|IT|CE)[0-9]{3}$/', $studentId)) {
+    $errors[] = 'Student ID must look like 25AIML002 or 25CSE001.';
+}
 if (!$termsAccepted) {
     $errors[] = 'Accept the terms and conditions to continue.';
 }
@@ -98,12 +102,13 @@ if ($errors === []) {
 
         $insertStudent = $connection->prepare(
             'INSERT INTO students
-             (user_id, name, email, phone, date_of_birth, gender, course, year, department, city)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+             (user_id, student_id, name, email, phone, date_of_birth, gender, course, year, department, city)
+             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
         );
         $insertStudent->bind_param(
-            'isssssssss',
+            'issssssssss',
             $userId,
+            $studentId,
             $name,
             $email,
             $phone,

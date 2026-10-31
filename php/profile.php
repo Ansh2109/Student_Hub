@@ -5,7 +5,7 @@ require_login();
 
 $user = current_user();
 $statement = db()->prepare(
-    'SELECT name, email, phone, date_of_birth, gender, course, year, department, city
+    'SELECT student_id, name, email, phone, date_of_birth, gender, course, year, department, city
      FROM students
      WHERE user_id = ?
      LIMIT 1'
@@ -41,6 +41,7 @@ render_header('My profile', 'profile');
             <a class="text-link" href="<?= e(app_url('php/dashboard.php')) ?>">Back to dashboard <span aria-hidden="true">→</span></a>
         </div>
         <dl class="profile-details">
+            <div><dt>Student ID</dt><dd><?= e($profile['student_id'] ?? 'Not provided') ?></dd></div>
             <div><dt>Full name</dt><dd><?= e($profile['name']) ?></dd></div>
             <div><dt>Email</dt><dd><?= e($profile['email']) ?></dd></div>
             <div><dt>Mobile</dt><dd><?= e($profile['phone'] !== '' ? $profile['phone'] : 'Not provided') ?></dd></div>

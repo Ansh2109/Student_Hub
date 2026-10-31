@@ -455,6 +455,40 @@ if (phoneInput) {
 const registerForm =
     document.getElementById("registerForm");
 
+const registrationPassword =
+    document.getElementById("password");
+
+const passwordStrength =
+    document.getElementById("passwordStrength");
+
+if (registrationPassword && passwordStrength) {
+    registrationPassword.addEventListener("input", function () {
+        const value = registrationPassword.value;
+        const hasLetter = /[A-Za-z]/.test(value);
+        const hasNumber = /\d/.test(value);
+        const hasSymbol = /[^A-Za-z0-9]/.test(value);
+
+        passwordStrength.classList.remove("weak", "fair", "strong");
+
+        if (value.length === 0) {
+            passwordStrength.textContent =
+                "Use 8 or more characters with at least one letter and one number.";
+        } else if (value.length < 8 || !hasLetter || !hasNumber) {
+            passwordStrength.textContent =
+                "Weak: use 8 or more characters with at least one letter and one number.";
+            passwordStrength.classList.add("weak");
+        } else if (value.length < 12 || !hasSymbol) {
+            passwordStrength.textContent =
+                "Fair: your password meets the minimum requirements.";
+            passwordStrength.classList.add("fair");
+        } else {
+            passwordStrength.textContent =
+                "Strong: use a unique password that you do not reuse elsewhere.";
+            passwordStrength.classList.add("strong");
+        }
+    });
+}
+
 function attachCsrfToken(form) {
     if (!form) {
         return;
@@ -575,6 +609,11 @@ if (registerForm) {
                     "course"
                 ).value;
 
+            const studentId =
+                document.getElementById(
+                    "student_id"
+                ).value.trim().toUpperCase();
+
             const year =
                 document.getElementById(
                     "year"
@@ -641,6 +680,11 @@ if (registerForm) {
                     "courseError"
                 );
 
+            const studentIdError =
+                document.getElementById(
+                    "studentIdError"
+                );
+
             const yearError =
                 document.getElementById(
                     "yearError"
@@ -666,6 +710,7 @@ if (registerForm) {
             passwordError.textContent = "";
             confirmPasswordError.textContent = "";
             courseError.textContent = "";
+            studentIdError.textContent = "";
             yearError.textContent = "";
             genderError.textContent = "";
             termsError.textContent = "";
@@ -775,7 +820,7 @@ if (registerForm) {
             ) {
 
                 passwordError.textContent =
-                    "Password must contain at least 6 characters, including a letter and a number.";
+                    "Password must contain at least 8 characters, including a letter and a number.";
 
                 isValid = false;
 
@@ -809,6 +854,15 @@ if (registerForm) {
 
                 courseError.textContent =
                     "Please select a course.";
+
+                isValid = false;
+
+            }
+
+            if (!/^[0-9]{2}(AIML|CSE|IT|CE)[0-9]{3}$/.test(studentId)) {
+
+                studentIdError.textContent =
+                    "Use a Student ID like 25AIML002 or 25CSE001.";
 
                 isValid = false;
 

@@ -15,9 +15,9 @@ render_header('Home', 'home');
 ?>
 <section class="home-hero">
     <div class="home-hero-copy">
-        <p class="eyebrow">Your campus, connected</p>
-        <h2>Make the most of student life.</h2>
-        <p>Find campus events, stay connected, and keep your student information in one place.</p>
+        <p class="eyebrow">CSPIT · CHARUSAT · AIML</p>
+        <h2>Campus life, connected.</h2>
+        <p>Discover AIML activities, campus events, and student services in one secure portal.</p>
         <div class="button-group">
             <?php if ($user !== null): ?>
                 <a class="btn" href="<?= e(app_url('php/dashboard.php')) ?>">Go to dashboard</a>
@@ -28,10 +28,10 @@ render_header('Home', 'home');
             <?php endif; ?>
         </div>
     </div>
-    <div class="home-hero-art" aria-hidden="true">
-        <div class="hero-orbit hero-orbit-one"></div>
-        <div class="hero-orbit hero-orbit-two"></div>
-        <div class="hero-campus-card"><span>SH</span><strong>StudentHub</strong><small>Campus life, in one place</small></div>
+    <div class="home-hero-art">
+        <img class="campus-life-image" src="https://it.cspit.charusat.ac.in/images/about/department.webp" alt="CSPIT campus building at CHARUSAT" referrerpolicy="no-referrer">
+        <div class="hero-campus-card"><span>SH</span><strong>StudentHub</strong><small>Department of Artificial Intelligence and Machine Learning</small></div>
+        <p class="image-credit">Campus image: <a href="https://it.cspit.charusat.ac.in/" target="_blank" rel="noopener noreferrer">CSPIT, CHARUSAT</a></p>
     </div>
 </section>
 

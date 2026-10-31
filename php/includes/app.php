@@ -241,8 +241,8 @@ function render_header(string $title, string $active = ''): void
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title><?= e($title) ?> | StudentHub</title>
-        <link rel="stylesheet" href="<?= e(app_url('css/style.css?v=20261031-ux')) ?>">
-        <link rel="stylesheet" href="<?= e(app_url('css/responsive.css?v=20261031-ux')) ?>">
+        <link rel="stylesheet" href="<?= e(app_url('css/style.css?v=20261031-about')) ?>">
+        <link rel="stylesheet" href="<?= e(app_url('css/responsive.css?v=20261031-about')) ?>">
     </head>
     <body>
     <a class="skip-link" href="#mainContent">Skip to content</a>
@@ -258,7 +258,7 @@ function render_header(string $title, string $active = ''): void
                     <details>
                         <summary>Explore</summary>
                         <ul class="nav-submenu">
-                            <li><a href="<?= e(app_url('pages/about.html')) ?>">About</a></li>
+                            <li><a href="<?= e(app_url('php/about.php')) ?>">About</a></li>
                             <li><a href="<?= e(app_url('pages/faq.html')) ?>">FAQ</a></li>
                             <li><a href="<?= e(app_url('pages/contact.html')) ?>">Contact</a></li>
                             <li><a href="<?= e(app_url('pages/feedback.html')) ?>">Feedback</a></li>

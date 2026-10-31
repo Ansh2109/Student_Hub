@@ -13,8 +13,8 @@ StudentHub is a responsive student portal built incrementally for the Web Techno
 1. Keep the project under `A:\xamp\htdocs\xampp\Student_Hub` (or another Apache document-root folder).
 2. Start Apache and MySQL in the XAMPP Control Panel.
 3. Open `http://localhost/phpmyadmin/`, select **Import**, and import [`database/schema.sql`](./database/schema.sql). This creates the `studenthub` database, tables, three sample events, and 20 sample student records. The seed inserts are safe to run again.
-   If upgrading a database created before the phone/date-of-birth/gender student fields were added, import [`database/migrations/001_student_profile_fields.sql`](./database/migrations/001_student_profile_fields.sql) once. Do not run that migration on a fresh schema that already has those columns.
-4. The default local connection uses host `127.0.0.1`, database `studenthub`, user `root`, an empty password, and port `3306`, as in a default XAMPP installation. For a customized MySQL setup, provide `STUDENTHUB_DB_HOST`, `STUDENTHUB_DB_NAME`, `STUDENTHUB_DB_USER`, `STUDENTHUB_DB_PASSWORD`, and optionally `STUDENTHUB_DB_PORT` to Apache/PHP. Do not commit credentials.
+   If upgrading an older database, run the matching migration files in order: [`database/migrations/001_student_profile_fields.sql`](./database/migrations/001_student_profile_fields.sql) adds profile fields and [`database/migrations/002_student_id.sql`](./database/migrations/002_student_id.sql) adds the optional unique Student ID. Do not run a migration that is already reflected in your schema.
+4. The default local connection uses host `127.0.0.1`, database `studenthub`, user `root`, an empty password, and port `3306`, as in a default XAMPP installation. For a customized MySQL setup, provide `STUDENTHUB_DB_HOST`, `STUDENTHUB_DB_NAME`, `STUDENTHUB_DB_USER`, `STUDENTHUB_DB_PASSWORD`, and optionally `STUDENTHUB_DB_PORT` to Apache/PHP. Shared hosting can instead use a server-only `php/includes/config.local.php` file copied from `config.local.php.example`. Do not commit credentials.
 5. Visit `http://localhost/xampp/Student_Hub/`. The PHP homepage adapts its actions to the signed-in state; use Home from the site navigation to return there.
 
 The primary registration form at `pages/register.html` creates a database-backed student account. The separate Practical 7 form at `php/register-csv.php` stores validated profile fields in `storage/registrations.csv`. The directory is denied by Apache so the CSV cannot be downloaded directly. Passwords are never written to that CSV.
@@ -51,6 +51,7 @@ Student_Hub/
 │   ├── admin/              Admin-only CRUD, dashboard tools and audit log
 │   ├── api/                JSON API endpoints
 │   ├── includes/           Session, database, CSRF and shared navigation
+│   ├── about.php           Public about page using shared navigation
 │   ├── home.php            Dynamic homepage and upcoming events
 │   ├── profile.php         Signed-in student's database-backed profile
 │   └── ...                 Registration, login, logout and public pages

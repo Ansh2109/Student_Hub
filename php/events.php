@@ -101,12 +101,12 @@ render_header('Campus events', 'events');
                 <p><strong>Registration:</strong> <?= e(ucfirst($event['status'])) ?> · <?= (int) $event['registration_count'] ?> registered</p>
                 <?php if ($event['status'] === 'open' && current_user() !== null): ?>
                     <?php if (isset($registeredEvents[(int) $event['id']])): ?>
-                        <p>You are registered.</p>
+                        <p class="event-registration-status" role="status">You are registered for this event.</p>
                     <?php else: ?>
                         <form method="post" action="<?= e(app_url('php/events.php')) ?>">
                             <?= csrf_field() ?>
                             <input type="hidden" name="event_id" value="<?= (int) $event['id'] ?>">
-                            <button type="submit">Register for event</button>
+                            <button type="submit"><?= current_user()['role'] === 'admin' ? 'Register as attendee' : 'Register for event' ?></button>
                         </form>
                     <?php endif; ?>
                 <?php elseif ($event['status'] === 'open'): ?>

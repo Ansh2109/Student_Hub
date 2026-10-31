@@ -8,11 +8,20 @@ function db(): mysqli
         return $connection;
     }
 
-    $host = getenv('STUDENTHUB_DB_HOST') ?: '127.0.0.1';
-    $user = getenv('STUDENTHUB_DB_USER') ?: 'root';
-    $password = getenv('STUDENTHUB_DB_PASSWORD');
-    $database = getenv('STUDENTHUB_DB_NAME') ?: 'studenthub';
-    $port = (int) (getenv('STUDENTHUB_DB_PORT') ?: 3306);
+    $localConfig = [];
+    $localConfigPath = __DIR__ . '/config.local.php';
+    if (is_file($localConfigPath)) {
+        $loadedConfig = require $localConfigPath;
+        if (is_array($loadedConfig)) {
+            $localConfig = $loadedConfig;
+        }
+    }
+
+    $host = $localConfig['host'] ?? getenv('STUDENTHUB_DB_HOST') ?: '127.0.0.1';
+    $user = $localConfig['user'] ?? getenv('STUDENTHUB_DB_USER') ?: 'root';
+    $password = $localConfig['password'] ?? getenv('STUDENTHUB_DB_PASSWORD');
+    $database = $localConfig['database'] ?? getenv('STUDENTHUB_DB_NAME') ?: 'studenthub';
+    $port = (int) ($localConfig['port'] ?? getenv('STUDENTHUB_DB_PORT') ?: 3306);
 
     try {
         $connection = new mysqli(

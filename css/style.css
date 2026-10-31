@@ -1081,6 +1081,16 @@ body.dark-theme .theme-toggle:hover {
     margin-bottom: 15px;
 }
 
+.password-strength {
+    margin: 0.35rem 0 0.75rem;
+    color: #5d6778;
+    font-size: 0.9rem;
+}
+
+.password-strength.weak { color: #c62828; }
+.password-strength.fair { color: #a56a00; }
+.password-strength.strong { color: #18794e; }
+
 
 body.dark-theme .error-text {
     color: #ff8a8a;
@@ -1379,6 +1389,27 @@ button:hover,
     place-items: center;
 }
 
+.campus-life-image {
+    width: min(400px, 100%);
+    min-height: 260px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 18px 38px rgba(14, 43, 73, 0.2);
+}
+
+.image-credit {
+    position: absolute;
+    right: 12px;
+    bottom: -28px;
+    margin: 0;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+.image-credit a {
+    color: inherit;
+}
+
 .hero-orbit {
     position: absolute;
     width: 235px;
@@ -1576,6 +1607,78 @@ button:hover,
     font-weight: 700;
 }
 
+/* Student and administrator portal dashboard */
+.portal-welcome { display: flex; align-items: center; justify-content: space-between; gap: 28px; overflow: hidden; color: #fff; background: linear-gradient(120deg, #102f55, #187b80); }
+.portal-welcome::after { width: 180px; height: 180px; border: 28px solid rgba(255,255,255,.09); border-radius: 50%; content: ""; transform: translate(55px, -52px); }
+.portal-welcome > div { position: relative; z-index: 1; }
+.portal-welcome h2 { margin: 6px 0 8px; color: #fff; font-size: clamp(1.8rem, 3.5vw, 2.65rem); }
+.portal-welcome p { margin: 0; color: rgba(255,255,255,.86); }
+.portal-kicker { font-size: .76rem; font-weight: 800; letter-spacing: .13em; }
+.portal-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.portal-actions .btn { white-space: nowrap; }
+.student-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+.student-tags span { padding: 6px 10px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; background: rgba(4,22,44,.18); font-size: .82rem; font-weight: 700; }
+.admin-welcome { background: linear-gradient(120deg, #3b1f58, #184f71); }
+.portal-status { display: flex; align-items: center; gap: 13px; border-color: #9be5d4; background: #edfdf8; }
+.portal-status > span { color: #0c896f; font-size: 1.5rem; }
+.portal-status div { flex: 1; }
+.portal-status p { margin: 3px 0 0; color: #4e6a70; font-size: .9rem; }
+.portal-status a { color: #075e55; font-weight: 800; white-space: nowrap; }
+.portal-panel { margin-top: 24px; }
+.academic-grid, .portal-stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.academic-grid article, .portal-stat-grid article { min-height: 104px; padding: 17px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface-muted); }
+.academic-grid span, .portal-stat-grid p { display: block; margin: 0 0 9px; color: var(--text-muted); font-size: .82rem; font-weight: 700; }
+.academic-grid strong { display: block; color: var(--brand-900); font-size: 1.05rem; }
+.portal-stat-grid article { border-top: 4px solid #168d85; background: var(--surface); }
+.portal-stat-grid article:nth-child(2) { border-top-color: #4d75d8; }.portal-stat-grid article:nth-child(3) { border-top-color: #a964c4; }.portal-stat-grid article:nth-child(4) { border-top-color: #e09137; }
+.portal-stat-grid span { font-size: 1.12rem; }.portal-stat-grid strong { color: var(--brand-900); font-size: 2rem; }
+.registered-event-list { display: grid; gap: 10px; }
+.registered-event-list article { display: flex; align-items: center; gap: 15px; margin: 0; padding: 15px 17px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-muted); }
+.registered-event-list h3 { margin: 0 0 4px; font-size: 1rem; }.registered-event-list p { margin: 0; color: var(--text-muted); font-size: .9rem; }
+.registered-event-list time { margin-left: auto; color: var(--brand-700); font-weight: 800; white-space: nowrap; }
+
+@media (max-width: 760px) {
+    .portal-welcome, .portal-status, .registered-event-list article { align-items: flex-start; flex-direction: column; }
+    .portal-welcome::after { display: none; }
+    .portal-actions { width: 100%; }
+    .academic-grid, .portal-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .registered-event-list time { margin-left: 0; }
+}
+
+@media (max-width: 430px) {
+    .academic-grid, .portal-stat-grid { grid-template-columns: 1fr; }
+}
+
+.about-hero {
+    background: linear-gradient(120deg, #fff 35%, #e8f4f5 100%);
+}
+
+.about-hero h2 {
+    margin-bottom: 12px;
+    color: var(--brand-900);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.about-hero > p:last-child {
+    max-width: 720px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.about-card {
+    margin-top: 0;
+    padding: 22px;
+    background: var(--surface-muted);
+}
+
+.event-registration-status {
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: #e3f4f1;
+    color: #116b61;
+    font-weight: 700;
+}
+
 footer {
     background: #102c47;
 }
@@ -1613,6 +1716,24 @@ body.dark-theme .event-card h3 {
 
 body.dark-theme .home-hero {
     background: linear-gradient(120deg, #1b2632 42%, #1b3d48 100%);
+}
+
+body.dark-theme .about-hero {
+    background: linear-gradient(120deg, #1b2632 35%, #1b3d48 100%);
+}
+
+body.dark-theme .about-hero h2,
+body.dark-theme .about-hero > p:last-child {
+    color: var(--text-main);
+}
+
+body.dark-theme .about-card {
+    background: var(--surface-muted);
+}
+
+body.dark-theme .event-registration-status {
+    background: #1d4947;
+    color: #9de2d6;
 }
 
 body.dark-theme .home-hero h2,

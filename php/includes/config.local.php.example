@@ -1,0 +1,12 @@
+<?php
+declare(strict_types=1);
+
+// Copy this file to config.local.php on your hosting server, then enter the
+// database values shown in the hosting control panel. Never commit that copy.
+return [
+    'host' => 'sql123.example-host.com',
+    'user' => 'hosting_database_user',
+    'password' => 'replace-with-your-hosting-database-password',
+    'database' => 'hosting_database_name',
+    'port' => 3306,
+];
