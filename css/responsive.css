@@ -2,11 +2,10 @@
 
     body {
         grid-template-areas:
-            "header header"
-            "aside main"
-            "footer footer";
-
-        grid-template-columns: 240px 1fr;
+            "header"
+            "main"
+            "footer";
+        grid-template-columns: minmax(0, 1fr);
     }
 
     header {
@@ -15,10 +14,17 @@
         z-index: 100;
     }
 
-    aside {
+    body:has(aside) {
+        grid-template-areas:
+            "header header"
+            "aside main"
+            "footer footer";
+        grid-template-columns: 240px minmax(0, 1fr);
+    }
+
+    body:has(aside) aside {
         border-right: 1px solid var(--border);
         border-bottom: none;
-
         min-height: calc(100vh - 100px);
     }
 
@@ -26,7 +32,7 @@
 
 
 /* ---------- Mobile ---------- */
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
 
     .menu-toggle {
         display: block !important;
@@ -63,7 +69,7 @@
     }
 
     .theme-toggle {
-        width: 100%;
+        width: auto;
     }
 }
 /* ---------- Small Mobile ---------- */
@@ -101,4 +107,3 @@
     }
 
 }
-

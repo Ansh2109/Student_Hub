@@ -8,8 +8,8 @@
 
     <title>StudentHub - Register</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/style.css?v=20261031-ux">
+    <link rel="stylesheet" href="../css/responsive.css?v=20261031-ux">
 
 </head>
 
@@ -39,7 +39,7 @@
                 <ul>
 
                     <li>
-                        <a href="../index.html">
+                        <a href="../index.php">
                             Home
                         </a>
                     </li>
@@ -190,7 +190,10 @@
 
             <!-- Registration Form -->
 
-            <form id="registerForm">
+            <form
+                id="registerForm"
+                action="../php/register-account.php"
+                method="POST">
 
 
                 <!-- =========================
@@ -215,12 +218,28 @@
                         id="fullname"
                         name="fullname"
                         placeholder="Enter your full name"
+                        autocomplete="name"
                         required>
 
                     <span
                         id="nameError"
                         class="error-text">
                     </span>
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        minlength="3"
+                        maxlength="60"
+                        pattern="[A-Za-z0-9._\-]{3,60}"
+                        autocomplete="username"
+                        placeholder="Choose a username"
+                        required>
 
 
                     <!-- Email -->
@@ -233,6 +252,7 @@
                         type="email"
                         id="email"
                         name="email"
+                        autocomplete="email"
                         placeholder="student@example.com"
                         required>
 
@@ -252,6 +272,7 @@
                         type="tel"
                         id="phone"
                         name="phone"
+                        autocomplete="tel"
                         placeholder="9876543210"
                         maxlength="10"
                         inputmode="numeric"
@@ -259,6 +280,23 @@
 
                     <span
                         id="phoneError"
+                        class="error-text">
+                    </span>
+
+                    <label for="city">
+                        City <span class="field-optional">(optional)</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        autocomplete="address-level2"
+                        maxlength="100"
+                        placeholder="Enter your city">
+
+                    <span
+                        id="cityError"
                         class="error-text">
                     </span>
 
@@ -273,6 +311,7 @@
                         type="date"
                         id="dob"
                         name="dob"
+                        autocomplete="bday"
                         required>
 
                 </fieldset>
@@ -300,6 +339,7 @@
                         id="password"
                         name="password"
                         placeholder="Enter password"
+                        minlength="8"
                         required>
 
                     <span
@@ -319,6 +359,7 @@
                         id="confirmPassword"
                         name="confirmPassword"
                         placeholder="Confirm password"
+                        minlength="8"
                         required>
 
                     <span
@@ -544,7 +585,7 @@
 
     <!-- JavaScript -->
 
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js?v=20261031"></script>
 
 </body>
 

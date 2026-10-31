@@ -35,6 +35,25 @@ if (menuToggle && mainNav) {
 const themeToggle =
     document.getElementById("themeToggle");
 
+const themeStorageKey = "studentHubTheme";
+
+function isDarkTheme() {
+    try {
+        return localStorage.getItem(themeStorageKey) === "dark";
+    } catch (error) {
+        console.error("Unable to read the saved theme preference.", error);
+        return false;
+    }
+}
+
+function applyTheme(isDark) {
+    document.body.classList.toggle("dark-theme", isDark);
+
+    if (themeToggle) {
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+    }
+}
+
 function updateThemeButton() {
 
     if (!themeToggle) {
@@ -55,7 +74,15 @@ function updateThemeButton() {
 
     }
 
+    themeToggle.setAttribute(
+        "aria-pressed",
+        String(document.body.classList.contains("dark-theme"))
+    );
+
 }
+
+applyTheme(isDarkTheme());
+updateThemeButton();
 
 if (themeToggle) {
 
@@ -63,9 +90,19 @@ if (themeToggle) {
         "click",
         function () {
 
-            document.body.classList.toggle(
-                "dark-theme"
-            );
+            const isDark =
+                !document.body.classList.contains("dark-theme");
+
+            applyTheme(isDark);
+
+            try {
+                localStorage.setItem(
+                    themeStorageKey,
+                    isDark ? "dark" : "light"
+                );
+            } catch (error) {
+                console.error("Unable to save the theme preference.", error);
+            }
 
             updateThemeButton();
 
@@ -374,7 +411,6 @@ faqQuestions.forEach(
 
 /* =================================================
    8. PHONE INPUT
-   Practical 5
 ================================================= */
 
 const phoneInput =
@@ -419,14 +455,83 @@ if (phoneInput) {
 const registerForm =
     document.getElementById("registerForm");
 
+function attachCsrfToken(form) {
+    if (!form) {
+        return;
+    }
+
+    const submitButton =
+        form.querySelector('button[type="submit"]');
+
+    if (submitButton) {
+        submitButton.disabled = true;
+    }
+
+    fetch("../php/csrf.php", {credentials: "same-origin"})
+        .then(function (response) {
+            if (!response.ok) {
+                throw new Error("Unable to initialize secure form submission.");
+            }
+
+            return response.json();
+        })
+        .then(function (result) {
+            if (typeof result.token !== "string" || result.token.length === 0) {
+                throw new Error("The server did not provide a valid form token.");
+            }
+
+            const tokenInput =
+                document.createElement("input");
+
+            tokenInput.type = "hidden";
+            tokenInput.name = "csrf_token";
+            tokenInput.value = result.token;
+            form.appendChild(tokenInput);
+
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+        })
+        .catch(function (error) {
+            console.error(error);
+            const message =
+                document.getElementById("registerMessage") ||
+                document.getElementById("loginMessage");
+            if (message) {
+                message.textContent =
+                    "Secure form setup failed. Reload the page before submitting.";
+                message.className = "error-message show";
+            }
+        });
+}
+
+attachCsrfToken(registerForm);
+
 if (registerForm) {
+    const registrationStatus =
+        new URLSearchParams(window.location.search).get("registered");
+
+    if (registrationStatus === "1") {
+        const message =
+            document.getElementById("registerMessage");
+
+        if (message) {
+            message.textContent =
+                "Registration details were saved successfully.";
+            message.className = "success-message show";
+        }
+
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname
+        );
+    }
+
 
     registerForm.addEventListener(
         "submit",
         function (event) {
-
-            event.preventDefault();
-
 
             /* ---------- Get Values ---------- */
 
@@ -443,6 +548,11 @@ if (registerForm) {
             const phone =
                 document.getElementById(
                     "phone"
+                ).value.trim();
+
+            const city =
+                document.getElementById(
+                    "city"
                 ).value.trim();
 
             const dob =
@@ -487,8 +597,11 @@ if (registerForm) {
             const phonePattern =
                 /^[0-9]{10}$/;
 
+            const cityPattern =
+                /^[\p{L} .-]{2,100}$/u;
+
             const passwordPattern =
-                /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+                /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
 
 
             /* ---------- Error Elements ---------- */
@@ -506,6 +619,11 @@ if (registerForm) {
             const phoneError =
                 document.getElementById(
                     "phoneError"
+                );
+
+            const cityError =
+                document.getElementById(
+                    "cityError"
                 );
 
             const passwordError =
@@ -544,6 +662,7 @@ if (registerForm) {
             nameError.textContent = "";
             emailError.textContent = "";
             phoneError.textContent = "";
+            cityError.textContent = "";
             passwordError.textContent = "";
             confirmPasswordError.textContent = "";
             courseError.textContent = "";
@@ -612,6 +731,21 @@ if (registerForm) {
 
                 phoneError.textContent =
                     "Mobile number must contain exactly 10 digits.";
+
+                isValid = false;
+
+            }
+
+
+            /* ---------- City ---------- */
+
+            if (
+                city !== "" &&
+                !cityPattern.test(city)
+            ) {
+
+                cityError.textContent =
+                    "Enter a valid city name using letters, spaces, periods or hyphens.";
 
                 isValid = false;
 
@@ -722,33 +856,8 @@ if (registerForm) {
             }
 
 
-            /* ---------- Success ---------- */
-
-            if (isValid) {
-
-                const registerMessage =
-                    document.getElementById(
-                        "registerMessage"
-                    );
-
-                registerMessage.textContent =
-                    "Registration successful! Redirecting to login page...";
-
-                registerMessage.className =
-                    "success-message show";
-
-                registerForm.reset();
-
-                setTimeout(
-                    function () {
-
-                        window.location.href =
-                            "login.html";
-
-                    },
-                    1500
-                );
-
+            if (!isValid) {
+                event.preventDefault();
             }
 
         }
@@ -768,7 +877,9 @@ const loginForm =
 const loginMessage =
     document.getElementById("loginMessage");
 
-if (loginForm) {
+attachCsrfToken(loginForm);
+
+if (loginForm && !loginForm.action.endsWith("/php/login.php")) {
 
     loginForm.addEventListener(
         "submit",
@@ -824,6 +935,16 @@ if (loginForm) {
     );
 
 }
+
+document.querySelectorAll("form[data-confirm]").forEach(
+    function (form) {
+        form.addEventListener("submit", function (event) {
+            if (!window.confirm(form.dataset.confirm)) {
+                event.preventDefault();
+            }
+        });
+    }
+);
 
 
 /* =================================================

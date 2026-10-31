@@ -7,8 +7,6 @@ import {
 } from "./modules/render.js";
 
 
-// HTML Elements
-
 const dataType = document.getElementById("dataType");
 const searchInput = document.getElementById("searchInput");
 const filterSelect = document.getElementById("filterSelect");
@@ -20,8 +18,6 @@ const resultCount = document.getElementById("resultCount");
 const pagination = document.getElementById("pagination");
 
 
-// Variables
-
 let allData = [];
 let currentData = [];
 let currentPage = 1;
@@ -29,16 +25,12 @@ let currentPage = 1;
 const recordsPerPage = 6;
 
 
-// JSON files
-
 const files = {
     events: "../data/events.json",
     students: "../data/students.json",
     faqs: "../data/faqs.json"
 };
 
-
-// Load JSON data
 
 async function loadData() {
     loading.style.display = "block";
@@ -67,8 +59,6 @@ async function loadData() {
     }
 }
 
-
-// Create filter options
 
 function createFilterOptions() {
     filterSelect.innerHTML =
@@ -110,13 +100,9 @@ function createFilterOptions() {
 }
 
 
-// Search, Filter and Sort
-
 function processData() {
     let data = [...allData];
 
-
-    // Search
 
     const search = searchInput.value
         .toLowerCase()
@@ -130,8 +116,6 @@ function processData() {
         });
     }
 
-
-    // Filter
 
     const filter = filterSelect.value;
 
@@ -156,8 +140,6 @@ function processData() {
     }
 
 
-    // Sort
-
     const sort = sortSelect.value;
 
     if (sort === "az") {
@@ -181,8 +163,6 @@ function processData() {
 }
 
 
-// Get name for sorting
-
 function getName(item) {
 
     if (dataType.value === "events") {
@@ -200,8 +180,6 @@ function getName(item) {
     return "";
 }
 
-
-// Render current page
 
 function renderCurrentPage() {
 
@@ -245,8 +223,6 @@ function renderCurrentPage() {
 }
 
 
-// Create pagination buttons
-
 function createPagination() {
 
     pagination.innerHTML = "";
@@ -261,8 +237,6 @@ function createPagination() {
         return;
     }
 
-
-    // Previous button
 
     const previous =
         document.createElement("button");
@@ -286,8 +260,6 @@ function createPagination() {
 
     pagination.appendChild(previous);
 
-
-    // Page number buttons
 
     for (
         let i = 1;

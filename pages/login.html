@@ -8,8 +8,8 @@
 
     <title>StudentHub - Login</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/style.css?v=20261031-ux">
+    <link rel="stylesheet" href="../css/responsive.css?v=20261031-ux">
 
 </head>
 
@@ -32,7 +32,7 @@
 
                 <ul>
 
-                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.php">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="register.html">Register</a></li>
 
@@ -99,7 +99,7 @@
             </div>
 
 
-            <form id="loginForm">
+            <form id="loginForm" action="../php/login.php" method="POST">
 
                 <fieldset>
 
@@ -110,9 +110,10 @@
                     </label>
 
                     <input
-                        type="email"
+                        type="text"
                         id="loginEmail"
-                        name="loginEmail"
+                        name="email"
+                        maxlength="190"
                         placeholder="student@example.com"
                         required>
 
@@ -124,7 +125,7 @@
                     <input
                         type="password"
                         id="loginPassword"
-                        name="loginPassword"
+                        name="password"
                         placeholder="Enter your password"
                         required>
 
@@ -161,6 +162,11 @@
 
             </p>
 
+            <p class="form-link">
+                Need an account with database-backed sign-in?
+                <a href="../php/register-account.php">Create an account</a>
+            </p>
+
         </section>
 
     </main>
@@ -175,7 +181,7 @@
     </footer>
 
 
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js?v=20261031"></script>
 
 </body>
 
