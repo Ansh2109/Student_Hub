@@ -50,17 +50,11 @@ Student_Hub/
 4. Import `database/schema.sql`.
 5. Open `http://localhost/xampp/Student_Hub/` in a browser.
 
-## Temporary Live Demo
+## Live Website
 
-[Open StudentHub Live Demo](https://bias-stat-cloth-jerusalem.trycloudflare.com/xampp/Student_Hub/)
+[Open StudentHub](http://studenthub-25aiml043.infinityfree.io/)
 
-This temporary link uses Cloudflare Tunnel. It works only while the computer is on, Apache is running in XAMPP, and the Cloudflare Tunnel terminal window remains open. MySQL must also be running for database features.
-
-## Permanent Hosting
-
-[StudentHub on InfinityFree](http://studenthub-25aiml043.infinityfree.io/)
-
-The InfinityFree domain was newly created and may take up to 72 hours to be available everywhere. This delay is caused by DNS propagation. After propagation is complete, the InfinityFree URL will be the permanent public website.
+StudentHub is permanently hosted on InfinityFree. The website can be accessed online without running XAMPP, Cloudflare Tunnel or the local computer.
 
 ## GitHub Repository
 
